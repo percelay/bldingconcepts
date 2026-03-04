@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Facebook, MapPin, Phone } from "lucide-react";
 
 export default function Navbar() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
       style={{
-        backgroundColor: "color-mix(in oklab, #F5F5F0 80%, transparent)",
-        borderBottomColor: "rgba(28, 28, 28, 0.1)",
+        backgroundColor: "color-mix(in oklab, #fff7ec 85%, transparent)",
+        borderBottomColor: "rgba(28, 28, 28, 0.12)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
@@ -15,25 +15,43 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center shrink-0">
             <span className="text-white font-black text-[11px] tracking-tight">
-              PFS
+              JM
             </span>
           </div>
           <div className="flex flex-col leading-none gap-0.5">
             <span className="text-text-main font-black text-[15px] tracking-tight leading-none">
-              Premier
-              <span className="text-primary">Flooring</span>
+              JM Carpet
+              <span className="text-primary">Express</span>
             </span>
             <span className="text-text-main/40 font-semibold text-[9px] tracking-[0.15em] uppercase leading-none">
-              Specialists
+              Inc.
             </span>
           </div>
         </Link>
 
-        {/* Right: Phone + CTA */}
-        <div className="flex items-center gap-5">
+        {/* Right: quick links + phone CTA */}
+        <div className="flex items-center gap-3 md:gap-5">
+          <a
+            href="https://www.google.com/maps/place/JM+Carpet+Express+Inc/data=!4m2!3m1!1s0x0:0x67ac49f7a6f4fa47?sa=X&ved=1t:2428&ictx=111"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden lg:inline-flex items-center gap-1.5 text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
+          >
+            <MapPin size={14} className="shrink-0" />
+            Directions
+          </a>
+          <a
+            href="https://www.facebook.com/p/JM-Carpet-Express-Inc-100063619538083/"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:inline-flex items-center gap-1.5 text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
+          >
+            <Facebook size={14} className="shrink-0" />
+            Facebook
+          </a>
           <a
             href="tel:9734421182"
-            className="hidden md:block text-text-main/60 font-semibold text-sm hover:text-primary transition-colors duration-200"
+            className="hidden md:block text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
           >
             973-442-1182
           </a>

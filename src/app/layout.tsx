@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Premier Flooring Specialists | 30+ Years of Expert Flooring",
+  title: "JM Carpet Express Inc | Flooring Installation in New Jersey",
   description:
-    "Expert hardwood installation, luxury carpeting, tile, and commercial flooring solutions. Serving New Jersey with 30+ years of experience. Emergency water damage service available. Call 973-442-1182.",
+    "JM Carpet Express Inc provides expert carpet, hardwood, vinyl, and commercial flooring installation in New Jersey. Call 973-442-1182 to request a quote.",
   keywords:
-    "flooring, hardwood, carpet, tile, commercial flooring, NJ flooring, water damage flooring",
+    "JM Carpet Express, flooring, hardwood, carpet, vinyl, commercial flooring, NJ flooring",
 };
 
 export default function RootLayout({

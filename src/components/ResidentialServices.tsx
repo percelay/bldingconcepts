@@ -5,7 +5,7 @@ const services = [
   {
     title: "Hardwood & Restoration",
     body: "Expert installation of exotic species, dust-free sanding, custom staining, and repairs. We bring your floors back to life.",
-    image: "/images/res-hardwood.jpg",
+    image: "/images/woods.jpg",
     alt: "Hardwood floor installation and restoration",
     fallbackGradient:
       "linear-gradient(135deg, #5C3D1A 0%, #8B5E2A 40%, #A0754A 100%)",
@@ -14,7 +14,7 @@ const services = [
   {
     title: "Luxury Carpeting & Rugs",
     body: "Featuring broadloom carpeting, custom runners, 100% wool luxury prints, and pet-resistant fibers for the modern family.",
-    image: "/images/res-carpet.jpg",
+    image: "/images/gal1.jpg",
     alt: "Luxury carpet and rug installation",
     fallbackGradient:
       "linear-gradient(135deg, #4A3B32 0%, #6B5548 40%, #7D6358 100%)",
@@ -23,7 +23,7 @@ const services = [
   {
     title: "Tile & Water Resistance",
     body: "Porcelain tile, stone backsplashes, and water-resistant flooring solutions perfect for kitchens, baths, and basements.",
-    image: "/images/res-tile.jpg",
+    image: "/images/gal2.jpg",
     alt: "Tile and water-resistant flooring installation",
     fallbackGradient:
       "linear-gradient(135deg, #3A4A52 0%, #56737E 40%, #6B8A95 100%)",
@@ -45,7 +45,7 @@ export default function ResidentialServices() {
         <h2 className="text-4xl md:text-5xl font-black text-text-main leading-tight tracking-tight max-w-xl">
           Transforming Homes,
           <br />
-          <span className="text-primary">One Floor at a Time.</span>
+          <span className="text-primary">One Room at a Time.</span>
         </h2>
       </div>
 
