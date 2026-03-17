@@ -20,17 +20,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text content */}
           <div className="animate-fade-in-up">
-            {/* Logo */}
-            <div className="mb-8">
+            {/* Logo as hero headline */}
+            <h1>
               <Image
                 src="/images/logo.png"
-                alt="Building Concepts of America"
-                width={120}
-                height={120}
-                className="h-28 w-auto"
+                alt="Welcome to Building Concepts of America, INC"
+                width={500}
+                height={250}
+                className="w-full max-w-md mb-6"
                 priority
               />
-            </div>
+            </h1>
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 mb-8">
@@ -39,14 +39,6 @@ export default function Hero() {
                 Innovative Building Systems
               </span>
             </div>
-
-            <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight mb-6">
-              Welcome To
-              <br />
-              <span className="text-gold">Building Concepts</span>
-              <br />
-              of America, INC
-            </h1>
 
             <p className="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-xl mb-10">
               Innovative Building Systems offering affordable, high quality, and
