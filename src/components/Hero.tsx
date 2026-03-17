@@ -4,21 +4,17 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Fading blue/white/red background — mostly white top-left for logo */}
+      {/* Light blue bottom-left/bottom, red top-right/right, separated by white center */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "radial-gradient(ellipse at 0% 0%, #FFFFFF 0%, #F8F7F4 20%, #E8EDF4 40%, #0B1D3A 75%, #9B1B30 100%)",
-        }}
-      />
-
-      {/* Secondary subtle gradient overlay for depth */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 30%, rgba(11,29,58,0.5) 60%, rgba(155,27,48,0.4) 100%)",
+          background: `
+            radial-gradient(ellipse at 0% 100%, rgba(59,130,180,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse at 30% 100%, rgba(59,130,180,0.2) 0%, transparent 40%),
+            radial-gradient(ellipse at 100% 0%, rgba(155,27,48,0.35) 0%, transparent 50%),
+            radial-gradient(ellipse at 100% 30%, rgba(155,27,48,0.2) 0%, transparent 40%),
+            #FFFFFF
+          `,
         }}
       />
 
