@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Building2,
   Car,
@@ -105,15 +106,23 @@ export default function ExpertiseSection() {
             );
           })}
 
-          {/* Photo placeholder card */}
-          <div className="bg-navy/5 border-2 border-dashed border-navy/20 p-8 flex flex-col items-center justify-center text-center min-h-[220px]">
-            <div className="w-16 h-16 border-2 border-navy/20 flex items-center justify-center mb-4">
-              <div className="w-6 h-6 border-2 border-navy/30 rounded-sm" />
+          {/* Project photo card */}
+          <div className="relative overflow-hidden min-h-[220px]">
+            <Image
+              src="/images/hero.png"
+              alt="Building Concepts of America project"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-white font-bold text-sm uppercase tracking-widest">
+                Our Projects
+              </p>
+              <p className="text-white/60 text-xs mt-1">
+                Quality clear span structures nationwide
+              </p>
             </div>
-            <p className="text-navy/40 text-sm font-medium uppercase tracking-widest">
-              Project Photo
-            </p>
-            <p className="text-navy/25 text-xs mt-1">Recommended: 600×400px</p>
           </div>
         </div>
       </div>

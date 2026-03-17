@@ -3,13 +3,31 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-navy min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background pattern — subtle diagonal stripes */}
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Fading blue/white/red background — mostly white top-left for logo */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 0% 0%, #FFFFFF 0%, #F8F7F4 20%, #E8EDF4 40%, #0B1D3A 75%, #9B1B30 100%)",
+        }}
+      />
+
+      {/* Secondary subtle gradient overlay for depth */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 30%, rgba(11,29,58,0.5) 60%, rgba(155,27,48,0.4) 100%)",
+        }}
+      />
+
+      {/* Subtle diagonal stripe pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(45deg, transparent, transparent 40px, white 40px, white 41px)",
+            "repeating-linear-gradient(45deg, transparent, transparent 40px, #000 40px, #000 41px)",
         }}
       />
 
@@ -33,14 +51,14 @@ export default function Hero() {
             </h1>
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 mb-8">
+            <div className="inline-flex items-center gap-2 bg-navy/10 border border-navy/20 px-4 py-1.5 mb-8">
               <span className="w-2 h-2 bg-crimson rounded-full" />
-              <span className="text-white/80 text-xs font-semibold uppercase tracking-widest">
+              <span className="text-navy/70 text-xs font-semibold uppercase tracking-widest">
                 Innovative Building Systems
               </span>
             </div>
 
-            <p className="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-xl mb-10">
+            <p className="text-steel text-lg sm:text-xl leading-relaxed max-w-xl mb-10">
               Innovative Building Systems offering affordable, high quality, and
               efficient clear span structures.
             </p>
@@ -49,7 +67,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#services"
-                className="group inline-flex items-center justify-center gap-3 bg-crimson text-white px-8 py-4 font-semibold text-sm uppercase tracking-wide hover:bg-crimson-dark transition-all"
+                className="group inline-flex items-center justify-center gap-3 bg-crimson text-white px-8 py-4 font-semibold text-sm uppercase tracking-wide hover:bg-crimson-dark transition-all shadow-lg"
               >
                 View Our Services
                 <ArrowRight
@@ -59,29 +77,29 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-3 border-2 border-white/30 text-white px-8 py-4 font-semibold text-sm uppercase tracking-wide hover:bg-white/10 hover:border-white/50 transition-all"
+                className="inline-flex items-center justify-center gap-3 border-2 border-navy/30 text-navy px-8 py-4 font-semibold text-sm uppercase tracking-wide hover:bg-navy hover:text-white hover:border-navy transition-all"
               >
                 Contact Us
               </a>
             </div>
 
             {/* Stats bar */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-navy/10">
               <div>
-                <div className="text-gold text-3xl font-black">100%</div>
-                <div className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                <div className="text-crimson text-3xl font-black">100%</div>
+                <div className="text-steel/60 text-xs uppercase tracking-widest mt-1">
                   Code Compliant
                 </div>
               </div>
               <div>
-                <div className="text-gold text-3xl font-black">35-Yr</div>
-                <div className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                <div className="text-crimson text-3xl font-black">35-Yr</div>
+                <div className="text-steel/60 text-xs uppercase tracking-widest mt-1">
                   Paint Warranty
                 </div>
               </div>
               <div>
-                <div className="text-gold text-3xl font-black">Fast</div>
-                <div className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                <div className="text-crimson text-3xl font-black">Fast</div>
+                <div className="text-steel/60 text-xs uppercase tracking-widest mt-1">
                   Construction
                 </div>
               </div>
@@ -91,15 +109,15 @@ export default function Hero() {
           {/* Right — Hero image */}
           <div className="animate-fade-in-up-delay-1 hidden lg:block">
             <div className="relative">
-              <div className="aspect-[4/3] relative overflow-hidden border-2 border-white/10">
+              <div className="aspect-[4/3] relative overflow-hidden border-2 border-white/30 shadow-2xl">
                 <Image
-                  src="/images/slide5.jpg"
+                  src="/images/hero.png"
                   alt="Building Concepts of America steel building project"
                   fill
                   priority
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
               </div>
               {/* Decorative accents */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-gold/30 -z-10" />
@@ -112,7 +130,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/70 transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-navy/40 hover:text-navy/70 transition-colors animate-bounce"
       >
         <ChevronDown size={28} />
       </a>

@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -12,6 +13,8 @@ const services = [
       "Meets all building codes",
       "Shorter construction cycle",
     ],
+    image: "/images/slide5.jpg",
+    alt: "Pre-engineered steel building by Building Concepts of America",
   },
   {
     number: "02",
@@ -24,6 +27,8 @@ const services = [
       "Enhanced thermal efficiency",
       "Sliding clip system",
     ],
+    image: "/images/standing seam.jpg",
+    alt: "Standing seam metal roof installation",
   },
   {
     number: "03",
@@ -36,6 +41,8 @@ const services = [
       "Mounts over existing decks",
       "No activity interruption",
     ],
+    image: "/images/retrofit metal roof.jpeg",
+    alt: "Retro-fit metal roof system installation",
   },
   {
     number: "04",
@@ -48,6 +55,8 @@ const services = [
       "35-year paint warranty",
       "Unsurpassed performance",
     ],
+    image: "/images/Preformed-Metal-Wall-Panel-1.jpg",
+    alt: "Pre-formed metal wall panel system",
   },
   {
     number: "05",
@@ -60,6 +69,8 @@ const services = [
       "Permit navigation",
       "Skilled supervision",
     ],
+    image: "/images/design+build.jpg",
+    alt: "Design and build process by Building Concepts of America",
   },
 ];
 
@@ -98,7 +109,7 @@ export default function ServicesSection() {
               }`}
             >
               {/* Number + Title */}
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-4">
                 <div className="flex items-start gap-4">
                   <span className="text-crimson/20 font-black text-5xl leading-none select-none">
                     {service.number}
@@ -130,13 +141,15 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-              {/* Photo placeholder */}
-              <div className="lg:col-span-2 flex items-center">
-                <div className="w-full aspect-square bg-gray-100 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center">
-                  <div className="w-8 h-8 border-2 border-gray-300 rounded-sm mb-2" />
-                  <p className="text-gray-400 text-[10px] font-medium uppercase tracking-widest">
-                    Photo
-                  </p>
+              {/* Service photo */}
+              <div className="lg:col-span-3 flex items-center">
+                <div className="w-full aspect-[4/3] relative overflow-hidden border border-gray-200">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
             </article>
