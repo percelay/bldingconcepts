@@ -107,8 +107,8 @@ export default function Hero() {
             <div className="relative">
               <div className="aspect-[4/3] relative overflow-hidden border-2 border-white/30 shadow-2xl">
                 <Image
-                  src="/images/hero.png"
-                  alt="Building Concepts of America steel building project"
+                  src="/images/76ers-fieldhouse-metal-building.jpg"
+                  alt="76ers Fieldhouse metal building by Building Concepts of America"
                   fill
                   priority
                   className="object-cover"
