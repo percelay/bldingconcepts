@@ -1,12 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import GallerySection from "@/components/GallerySection";
-import ResidentialServices from "@/components/ResidentialServices";
-import CommercialServices from "@/components/CommercialServices";
+import AboutSection from "@/components/AboutSection";
+import ExpertiseSection from "@/components/ExpertiseSection";
+import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ManufacturersSection from "@/components/ManufacturersSection";
-import QuoteFormSection from "@/components/QuoteFormSection";
-import LocationSection from "@/components/LocationSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,13 +12,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <ResidentialServices />
-      <CommercialServices />
-      <GallerySection />
+      <AboutSection />
+      <ExpertiseSection />
+      <ServicesSection />
       <TestimonialsSection />
-      <ManufacturersSection />
-      <QuoteFormSection />
-      <LocationSection />
+      <ContactSection />
       <Footer />
     </main>
   );

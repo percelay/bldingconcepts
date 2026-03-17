@@ -9,11 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JM Carpet Express Inc | Flooring Installation in New Jersey",
+  title:
+    "Building Concepts of America, INC | Pre-Engineered Steel Buildings & Metal Roofing",
   description:
-    "JM Carpet Express Inc provides expert carpet, hardwood, vinyl, and commercial flooring installation in New Jersey. Call 973-442-1182 to request a quote.",
+    "Building Concepts of America offers innovative, affordable, and high-quality pre-engineered steel buildings, standing seam metal roofs, retro-fit roof systems, and design/build services in Newark, Delaware.",
   keywords:
-    "JM Carpet Express, flooring, hardwood, carpet, vinyl, commercial flooring, NJ flooring",
+    "pre-engineered steel buildings, metal roofing, standing seam, retro-fit roof, design build, clear span structures, Building Concepts of America, Newark Delaware",
 };
 
 export default function RootLayout({

@@ -1,69 +1,132 @@
-import Link from "next/link";
-import { Facebook, MapPin, Phone } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Phone, Mail, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
-  return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
-      style={{
-        backgroundColor: "color-mix(in oklab, #fff7ec 85%, transparent)",
-        borderBottomColor: "rgba(28, 28, 28, 0.12)",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center shrink-0">
-            <span className="text-white font-black text-[11px] tracking-tight">
-              JM
-            </span>
-          </div>
-          <div className="flex flex-col leading-none gap-0.5">
-            <span className="text-text-main font-black text-[15px] tracking-tight leading-none">
-              JM Carpet
-              <span className="text-primary">Express</span>
-            </span>
-            <span className="text-text-main/40 font-semibold text-[9px] tracking-[0.15em] uppercase leading-none">
-              Inc.
-            </span>
-          </div>
-        </Link>
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-        {/* Right: quick links + phone CTA */}
-        <div className="flex items-center gap-3 md:gap-5">
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Expertise", href: "#expertise" },
+    { label: "Services", href: "#services" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <>
+      {/* Top utility bar */}
+      <div className="bg-navy text-white text-sm">
+        <div className="max-w-7xl mx-auto px-6 py-2.5 flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <a
+              href="tel:3022920200"
+              className="flex items-center gap-2 hover:text-gold transition-colors"
+            >
+              <Phone size={13} />
+              <span>(302) 292-0200</span>
+            </a>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <a
+              href="tel:3022920201"
+              className="hidden sm:flex items-center gap-2 hover:text-gold transition-colors"
+            >
+              <Phone size={13} />
+              <span>(302) 292-0201</span>
+            </a>
+          </div>
           <a
-            href="https://www.google.com/maps/place/JM+Carpet+Express+Inc/data=!4m2!3m1!1s0x0:0x67ac49f7a6f4fa47?sa=X&ved=1t:2428&ictx=111"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden lg:inline-flex items-center gap-1.5 text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
+            href="mailto:info@buildingconceptsofamerica.co"
+            className="flex items-center gap-2 hover:text-gold transition-colors"
           >
-            <MapPin size={14} className="shrink-0" />
-            Directions
-          </a>
-          <a
-            href="https://www.facebook.com/p/JM-Carpet-Express-Inc-100063619538083/"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
-          >
-            <Facebook size={14} className="shrink-0" />
-            Facebook
-          </a>
-          <a
-            href="tel:9734421182"
-            className="hidden md:block text-text-main/65 font-semibold text-sm hover:text-primary transition-colors duration-200"
-          >
-            973-442-1182
-          </a>
-          <a
-            href="tel:9734421182"
-            className="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-sm font-bold text-sm transition-all duration-200 hover:bg-primary/80"
-          >
-            <Phone size={13} className="shrink-0" />
-            <span>Call Now</span>
+            <Mail size={13} />
+            <span className="hidden sm:inline">
+              info@buildingconceptsofamerica.co
+            </span>
+            <span className="sm:hidden">Email Us</span>
           </a>
         </div>
       </div>
-    </nav>
+
+      {/* Main navigation */}
+      <nav className="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3">
+            <Image
+              src="/images/logo.png"
+              alt="Building Concepts of America"
+              width={56}
+              height={56}
+              className="h-14 w-auto"
+              priority
+            />
+            <div className="hidden md:block">
+              <div className="text-navy font-bold text-lg leading-tight tracking-tight">
+                Building Concepts
+              </div>
+              <div className="text-crimson text-xs font-semibold uppercase tracking-widest">
+                of America, INC
+              </div>
+            </div>
+          </a>
+
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-steel font-medium text-sm uppercase tracking-wide hover:text-crimson transition-colors relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-crimson transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="ml-4 bg-crimson text-white px-6 py-2.5 text-sm font-semibold uppercase tracking-wide hover:bg-crimson-dark transition-colors"
+            >
+              Get Started
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="lg:hidden text-navy"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-200 pb-6">
+            <div className="max-w-7xl mx-auto px-6 pt-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-steel font-medium text-sm uppercase tracking-wide py-2 border-b border-gray-100 hover:text-crimson transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setMobileOpen(false)}
+                className="bg-crimson text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-center hover:bg-crimson-dark transition-colors mt-2"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 }
