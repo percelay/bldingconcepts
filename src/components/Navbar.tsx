@@ -57,9 +57,9 @@ export default function Navbar() {
             <Image
               src="/images/logo.png"
               alt="Building Concepts of America"
-              width={56}
-              height={56}
-              className="h-14 w-auto"
+              width={72}
+              height={72}
+              className="h-18 w-auto"
               priority
             />
             <div className="hidden md:block">

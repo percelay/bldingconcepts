@@ -20,6 +20,18 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Text content */}
           <div className="animate-fade-in-up">
+            {/* Logo */}
+            <div className="mb-8">
+              <Image
+                src="/images/logo.png"
+                alt="Building Concepts of America"
+                width={120}
+                height={120}
+                className="h-28 w-auto"
+                priority
+              />
+            </div>
+
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 mb-8">
               <span className="w-2 h-2 bg-crimson rounded-full" />
